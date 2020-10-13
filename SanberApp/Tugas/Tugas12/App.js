@@ -20,6 +20,27 @@ export default class App extends React.Component {
             </TouchableOpacity>
           </View>
         </View>
+        <View style={styles.body}>
+
+        </View>
+        <View style={styles.tabBar}>
+          <TouchableOpacity style={styles.tabItem}>
+            <Icon name='home' size={25}/>
+            <Text style={styles.tabTitle}>Home</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.tabItem}>
+            <Icon name='whatshot' size={25}/>
+            <Text style={styles.tabTitle}>Trending</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.tabItem}>
+            <Icon name='subscriptions' size={25}/>
+            <Text style={styles.tabTitle}>Subscriptions</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.tabItem}>
+            <Icon name='folder' size={25}/>
+            <Text style={styles.tabTitle}>Library</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -45,4 +66,24 @@ const styles = StyleSheet.create({
   navItem: {
     marginLeft: 25,
   },
+  body:{
+    flex:1
+  },
+  tabBar:{
+    backgroundColor:'white',
+    height:60,
+    borderTopWidth:0.5,
+    borderColor:'#e5e5e5',
+    flexDirection:'row',
+    justifyContent:'space-around'
+  },
+  tabItem:{
+    alignItems:'center',
+    justifyContent:'center'
+  },
+  tabTitle:{
+    fontSize:11,
+    color:'#3c3c3c',
+    paddingTop:4
+  }
 });
