@@ -3,10 +3,12 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Component from './Tugas/Tugas12/App';
 import YoutubeUI from './Tugas/Tugas12/App';
+import SanberApp from './Tugas/Tugas13/Login';
 
 export default function App() {
   return (
-    <YoutubeUI/>
+    <SanberApp />
+    // <YoutubeUI/>
     // <Component />
     // <View style={styles.container}>
     //   <Text>Open up App.js to start working on your app!</Text>
