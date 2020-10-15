@@ -5,13 +5,15 @@ import Component from './Tugas/Tugas12/App';
 import YoutubeUI from './Tugas/Tugas12/App';
 import LoginScreen from './Tugas/Tugas13/LoginScreen';
 import AboutScreen from './Tugas/Tugas13/AboutScreen';
-import Tugas14 from './Tugas/Tugas14/App';
+import ToDoApps from './Tugas/Tugas14/App';
+import SkillScreen from './Tugas/Tugas14/SkillScreen';
 
 export default function App() {
   return (
     // <LoginScreen />
     // <AboutScreen />
-    <Tugas14 />
+    // <ToDoApps />
+    <SkillScreen />
   );
 }
 
