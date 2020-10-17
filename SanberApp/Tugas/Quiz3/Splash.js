@@ -3,11 +3,6 @@ import {StyleSheet, View, Image} from 'react-native';
 
 const Splash = ({navigation}) => {
 
-//   useEffect(() => {
-//     setTimeout(() => {
-//       navigation.push('Register');
-//     }, 2000);
-//   },[]);
   return (
     <View style={styles.container}>
       <View style={styles.circle} />

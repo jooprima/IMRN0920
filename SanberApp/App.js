@@ -10,6 +10,7 @@ import SkillScreen from './Tugas/Tugas14/SkillScreen';
 import Quiz3 from './Tugas/Quiz3/Splash';
 import Register from './Tugas/Quiz3/Register';
 import Login from './Tugas/Quiz3/Login';
+import Home from './Tugas/Quiz3/Home';
 
 export default function App() {
   return (
@@ -19,7 +20,8 @@ export default function App() {
     // <SkillScreen />
     // <Quiz3 />
     // <Register/>
-    <Login/>
+    // <Login/>
+    <Home/>
     
   );
 }
