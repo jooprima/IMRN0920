@@ -7,13 +7,20 @@ import LoginScreen from './Tugas/Tugas13/LoginScreen';
 import AboutScreen from './Tugas/Tugas13/AboutScreen';
 import ToDoApps from './Tugas/Tugas14/App';
 import SkillScreen from './Tugas/Tugas14/SkillScreen';
+import Quiz3 from './Tugas/Quiz3/Splash';
+import Register from './Tugas/Quiz3/Register';
+import Login from './Tugas/Quiz3/Login';
 
 export default function App() {
   return (
     // <LoginScreen />
     // <AboutScreen />
     // <ToDoApps />
-    <SkillScreen />
+    // <SkillScreen />
+    // <Quiz3 />
+    // <Register/>
+    <Login/>
+    
   );
 }
 
