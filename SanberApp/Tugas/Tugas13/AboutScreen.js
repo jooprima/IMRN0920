@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     marginBottom: 2,
+    justifyContent: "space-between"
   },
   juduldalam: {
     fontSize: 18,
