@@ -16,9 +16,9 @@ export default function App() {
   return (
     // <LoginScreen />
     // <RegisterScreen />
-    <AboutScreen />
+    // <AboutScreen />
     // <ToDoApps />
-    // <SkillScreen />
+    <SkillScreen />
     // <Quiz3 />
     // <Login/>
     
