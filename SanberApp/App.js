@@ -11,6 +11,7 @@ import SkillScreen from './Tugas/Tugas14/SkillScreen';
 import Quiz3 from './Tugas/Quiz3/Splash';
 import Register from './Tugas/Quiz3/Register';
 import Login from './Tugas/Quiz3/Login';
+import Tugas15 from './Tugas/Tugas15/index';
 
 export default function App() {
   return (
@@ -18,18 +19,18 @@ export default function App() {
     // <RegisterScreen />
     // <AboutScreen />
     // <ToDoApps />
-    <SkillScreen />
+    // <SkillScreen />
     // <Quiz3 />
     // <Login/>
-    
+    <Tugas15 />
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });
