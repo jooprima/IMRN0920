@@ -1,8 +1,9 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { AuthContext } from "./context";
 
 import {
   SignIn,
@@ -12,9 +13,24 @@ import {
   Details,
   Search2,
   Profile,
+  Splash,
 } from "./Screen";
 
 const AuthStack = createStackNavigator();
+const AuthStackScreen = () =>(
+  <AuthStack.Navigator>
+            <AuthStack.Screen
+              name="SignIn"
+              component={SignIn}
+              options={{ title: "Sign In" }}
+            />
+            <AuthStack.Screen
+              name="CreateAccount"
+              component={CreateAccount}
+              options={{ title: "Create Account" }}
+            />
+  </AuthStack.Navigator>
+)
 const Tabs = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
 const SearchStack = createStackNavigator();
@@ -34,8 +50,8 @@ const HomeStackScreen = () => (
 
 const SearchStackScreen = () => (
   <SearchStack.Navigator>
-    <SearchStack.Screen name='Search' component={Search} />
-    <SearchStack.Screen name='Search2' component={Search2} />
+    <SearchStack.Screen name="Search" component={Search} />
+    <SearchStack.Screen name="Search2" component={Search2} />
   </SearchStack.Navigator>
 );
 
@@ -55,23 +71,68 @@ const TabsScreen = () => (
 
 const Drawer = createDrawerNavigator();
 
-export default () => (
-  <NavigationContainer>
-    <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={TabsScreen} />
-      <Drawer.Screen name="Profile" component={ProfilestackScreen} />
-    </Drawer.Navigator>
-    {/* <AuthStack.Navigator>
-      <AuthStack.Screen
-        name="SignIn"
-        component={SignIn}
-        options={{ title: "Sign In" }}
+const DrawerScreen = () => (
+  <Drawer.Navigator initialRouteName="Profile">
+    <Drawer.Screen name="Home" component={TabsScreen} />
+    <Drawer.Screen name="Profile" component={ProfilestackScreen} />
+  </Drawer.Navigator>
+)
+
+const RootStack = createStackNavigator();
+const RootStackScreen = ({ userToken }) => (
+  <RootStack.Navigator>
+    {userToken ? (
+      <RootStack.Screen
+        name="App"
+        component={DrawerScreen}
+        options={{ animationEnabled: false }}
       />
-      <AuthStack.Screen
-        name="CreateAccount"
-        component={CreateAccount}
-        options={{ title: "Create Account" }}
+    ) : (
+      <RootStack.Screen
+        name="Auth"
+        component={AuthStackScreen}
+        options={{ animationEnabled: false }}
       />
-    </AuthStack.Navigator> */}
-  </NavigationContainer>
+    )}
+  </RootStack.Navigator>
 );
+
+export default () => {
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [userToken, setUserToken] = React.useState(null);
+
+  const authContext = React.useMemo(() => {
+    return {
+      signIn: () => {
+        setIsLoading(false);
+        setUserToken("asdf");
+      },
+      signUp: () => {
+        setIsLoading(false);
+        setUserToken("asdf");
+      },
+      signOut: () => {
+        setIsLoading(false);
+        setUserToken(null);
+      },
+    };
+  }, []);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
+
+  if (isLoading) {
+    return <Splash />;
+  }
+
+  return (
+    <AuthContext.Provider value={authContext}>
+      <NavigationContainer>
+        <RootStackScreen userToken={userToken} />
+      </NavigationContainer>
+    </AuthContext.Provider>
+  );
+};
