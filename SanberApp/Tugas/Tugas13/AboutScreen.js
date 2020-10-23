@@ -122,7 +122,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     marginBottom: 2,
-    justifyContent: "space-between"
+    marginTop: 10,
+    // justifyContent: "space-between"
   },
   juduldalam: {
     fontSize: 18,
@@ -134,13 +135,13 @@ const styles = StyleSheet.create({
     color: "#003366",
     textAlign: "center",
   },
-  input:{
-      height:40,
-      borderColor:'grey',
-      borderWidth:1,
+  input: {
+    height: 40,
+    borderColor: "grey",
+    borderWidth: 1,
   },
-  textname:{
-      justifyContent:'center',
-      marginLeft:10,
-  }
+  textname: {
+    justifyContent: "center",
+    marginLeft: 10,
+  },
 });

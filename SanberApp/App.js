@@ -12,9 +12,11 @@ import Quiz3 from './Tugas/Quiz3/Splash';
 import Register from './Tugas/Quiz3/Register';
 import Login from './Tugas/Quiz3/Login';
 import Tugas15 from './Tugas/Tugas15/index';
+import TugasNavigation from './Tugas/TugasNavigation/index';
 
 export default function App() {
   return (
+    <TugasNavigation />
     // <LoginScreen />
     // <RegisterScreen />
     // <AboutScreen />
@@ -22,7 +24,7 @@ export default function App() {
     // <SkillScreen />
     // <Quiz3 />
     // <Login/>
-    <Tugas15 />
+    // <Tugas15 />
   );
 }
 
